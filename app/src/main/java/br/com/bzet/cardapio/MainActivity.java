@@ -1,10 +1,12 @@
 package br.com.bzet.cardapio;
 
 import android.support.annotation.IdRes;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.view.CollapsibleActionView;
 import android.support.v7.widget.Toolbar;
 
 import com.roughike.bottombar.BottomBar;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private BottomBar mBottomBar;
     private ViewPagerAdapter viewPagerAdapter;
+    private CollapsingToolbarLayout collapsingToolbarLayout;
 
     private List<Item> listItem; //lista de itens do cardapio
 
@@ -57,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        //Troca a cor da bottom tab
         //mBottomBar.mapColorForTab(0, ContextCompat.getColor(this, R.color.colorAccent));
         //mBottomBar.mapColorForTab(1, 0xFF5D4037);
         //mBottomBar.mapColorForTab(2, "#7B1FA2");
@@ -73,17 +77,14 @@ public class MainActivity extends AppCompatActivity {
 //            }
 
 
-        //Tabs para a pagina de Cardápio
+
+        //Tabs para a Página de Cardápio
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-
-
-
-
     }
 
 
